@@ -4,7 +4,7 @@ class CommandReader
   AVAILABLE_COMMANDS = %w[PLACE MOVE LEFT RIGHT REPORT].freeze
 
   def self.execute(raw_command, robot)
-    command, args = raw_command.strip.split(' ')
+    command, args = raw_command.to_s.strip.split(' ')
 
     return unless AVAILABLE_COMMANDS.include?(command)
 

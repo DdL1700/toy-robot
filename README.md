@@ -1,4 +1,23 @@
 # Toy Robot
+## Instructions
+Application file directory *lib/*
+Test file directory *spec/*
+
+### Start to play
+Before start, Ruby-2.7.3 and required gems have to be installed
+By default, this program will read *commands.text* file from the project root directory. It also reads a file path from the first argument
+```
+ruby lib/start_game.rb
+ruby lib/start_game.rb path/to/file.text
+```
+### Testing
+- Run rspec tests
+```
+rspec
+```
+- Testing Coverage
+After running tests, there will be a *coverage/* folder
+Open *coverage/index.html* from browser
 
 #### What is this ?
 

@@ -1,13 +1,11 @@
 require_relative 'robot'
 require_relative 'command_reader'
 
-class Game
-  def self.play
+class ToyRobot
+  def self.play(file:)
     @robot = Robot.new
-    File.foreach('commands.txt') do |raw_command|
+    File.foreach(file) do |raw_command|
       CommandReader.execute(raw_command, @robot)
     end
   end
 end
-
-Game.play

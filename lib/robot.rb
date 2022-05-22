@@ -5,7 +5,7 @@ require_relative 'table'
 class Robot
   AVAILABLE_DIRECTIONS = %i[north east south west].freeze
 
-  attr_reader :x, :y, :direction
+  attr_reader :x, :y, :direction, :table
 
   def initialize
     @table = Table.new
@@ -22,8 +22,8 @@ class Robot
   def move
     return unless placed?
 
-    new_position = position.zip(move_abilities[@direction]).map do |value, move_ability|
-      value + move_ability
+    new_position = position.zip(move_abilities[@direction]).map do |current_point, move_ability|
+      current_point + move_ability
     end
     @x, @y = new_position if @table.valid_position?(new_position)
   end
